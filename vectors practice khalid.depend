@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1524253022 source:c:\users\public\public projects\vectors practice khalid\main.cpp
+1524598093 source:c:\users\public\public projects\vectors practice khalid\main.cpp
 	<SFML/Graphics.hpp>
 	<iostream>
 	<vector>
+	<stdlib.h>
 
 1523301203 c:\program files (x86)\codeblocks\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
