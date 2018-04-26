@@ -14,9 +14,15 @@ int randNum(int small, int large);
 
 void randVec(vector<int>& a);
 
-void randVecS(vector<int>& a);
+void randVec2(vector<int>& a);
 
 void printVec(const vector<int>& a);
+
+void randVecInsert(vector<int>& a);
+
+void randVecErase(vector<int>& a);
+
+void randVecChange(vector<int>& a);
 
 
 int main()
@@ -44,7 +50,7 @@ int main()
     cout << endl;
 
 
-    randVecS(a);
+    randVec2(a);
 
     cout << "size of array " << a.size() << endl;
 
@@ -52,6 +58,38 @@ int main()
 
     cout << "average of numbers " << avOfNum(a) << endl;
 
+    cout << endl;
+    cout << endl;
+
+    randVecInsert(a);
+
+    cout << "size of array " << a.size() << endl;
+
+    printVec(a);
+
+    cout << "average of numbers " << avOfNum(a) << endl;
+
+    cout << endl;
+    cout << endl;
+
+    randVecErase(a);
+
+    cout << "size of array " << a.size() << endl;
+
+    printVec(a);
+
+    cout << "average of numbers " << avOfNum(a) << endl;
+
+    cout << endl;
+    cout << endl;
+
+    randVecChange(a);
+
+    cout << "size of array " << a.size() << endl;
+
+    printVec(a);
+
+    cout << "average of numbers " << avOfNum(a) << endl;
 
     return 0;
 }
@@ -97,7 +135,7 @@ void randVec(vector<int>& a)
     }
 }
 
-void randVecS(vector<int>& a)
+void randVec2(vector<int>& a)
 {
     do
     {
@@ -107,9 +145,49 @@ void randVecS(vector<int>& a)
 
 void printVec(const vector<int>& a)
 {
-    for(int i = 0; i < a.size(); i++)
+    vector<int>::const_iterator i;
+    for(i = a.begin(); i != a.end(); i++)
     {
-       cout << a[i] << endl;
+       cout << *i << endl;
     }
 
+}
+
+void randVecInsert(vector<int>& a)
+{
+    vector<int>::iterator i;
+    for(i = a.begin(); i != a.end(); i++)
+    {
+        int r = randNum(1 , 5);
+        if(r == 5)
+        {
+            a.insert(i , randNum(1000, 1500));
+        }
+    }
+}
+
+void randVecErase(vector<int>& a)
+{
+    vector<int>::iterator i;
+    for(i = a.begin(); i != a.end(); i++)
+    {
+        int r = randNum(1 , 5);
+        if(r == 5)
+        {
+            a.erase(i);
+        }
+    }
+}
+
+void randVecChange(vector<int>& a)
+{
+    vector<int>::iterator i;
+    for(i = a.begin(); i != a.end(); i++)
+    {
+        int r = randNum(1 , 5);
+        if(r == 5)
+        {
+            *i = randNum(1000 , 1500);
+        }
+    }
 }
